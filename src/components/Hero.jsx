@@ -31,10 +31,10 @@ const Hero = () => {
             className="flex flex-col space-y-6"
           >
             <h2 className="text-neon-blue font-medium text-lg tracking-wide">HELLO, WORLD! I AM</h2>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-display font-bold text-white leading-tight whitespace-nowrap">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-display font-bold text-white leading-tight">
               Nishanth Uday Naik
             </h1>
-            <div className="h-12 text-2xl sm:text-3xl font-display font-semibold text-gray-300">
+            <div className="min-h-[4rem] sm:min-h-[3rem] text-2xl sm:text-3xl font-display font-semibold text-gray-300">
               <span className="mr-2">I am an</span>
               <span className="text-neon-purple glow-text">
                 <Typewriter
