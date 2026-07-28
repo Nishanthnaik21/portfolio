@@ -2,6 +2,11 @@ import { motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 
+import dipSimulatorImg from '../assets/projects/dip_simulator.png';
+import aiAutoOrderImg from '../assets/projects/ai_auto_order.png';
+import hullguardAiImg from '../assets/projects/hullguard_ai.png';
+import surveillanceFaceRecImg from '../assets/projects/surveillance_face_rec.png';
+
 const Projects = () => {
   const projects = [
     {
@@ -11,7 +16,7 @@ const Projects = () => {
       challenges: "Implementing complex mathematical transformations efficiently.",
       github: "https://github.com/Nishanthnaik21/DIP_learning_simulator",
       demo: "#",
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80"
+      image: dipSimulatorImg
     },
     {
       title: "AI Auto Order Generator",
@@ -20,7 +25,7 @@ const Projects = () => {
       challenges: "Ensuring reliable and accurate order generation using AI models.",
       github: "https://github.com/Nishanthnaik21/AI_Auto_Order_Generator",
       demo: "#",
-      image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=800&q=80"
+      image: aiAutoOrderImg
     },
     {
       title: "HullGuard AI",
@@ -29,7 +34,7 @@ const Projects = () => {
       challenges: "Optimizing YOLOv8 for marine hull conditions and precise damage bounding.",
       github: "https://github.com/Nishanthnaik21/HullGuard-AI",
       demo: "#",
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80"
+      image: hullguardAiImg
     },
     {
       title: "Face Recognition & Surveillance Management System",
@@ -38,7 +43,7 @@ const Projects = () => {
       challenges: "Ensuring real-time performance and accuracy in diverse lighting conditions.",
       github: "https://github.com/poorvikkg/Major",
       demo: "#",
-      image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800&q=80"
+      image: surveillanceFaceRecImg
     }
   ];
 

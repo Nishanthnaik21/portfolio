@@ -14,7 +14,7 @@ const Hero = () => {
         style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 30%, black 100%)', maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 30%, black 100%)' }}
       >
         <img 
-          src="/portfolio/image.JPG" 
+          src={`${import.meta.env.BASE_URL}image.JPG`} 
           alt="Nishanth Uday Naik" 
           className="w-full h-full object-cover" 
           onError={(e) => { e.target.src = '/image.JPG'; e.target.onerror = null; }} 
