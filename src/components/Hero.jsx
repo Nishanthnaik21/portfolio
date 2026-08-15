@@ -53,7 +53,7 @@ const Hero = () => {
             </p>
             
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href={`${import.meta.env.BASE_URL}Nishanth_Uday_Naik_Resume.pdf`} download="Nishanth_Uday_Naik_Resume.pdf" className="px-6 py-3 bg-neon-blue text-dark-900 font-semibold rounded-full flex items-center hover:bg-white hover:text-dark-900 hover:scale-105 active:scale-95 transition-all glow-box duration-300">
+              <a href={`${import.meta.env.BASE_URL}Nishanth_Resume.pdf`} download="Nishanth_Resume.pdf" className="px-6 py-3 bg-neon-blue text-dark-900 font-semibold rounded-full flex items-center hover:bg-white hover:text-dark-900 hover:scale-105 active:scale-95 transition-all glow-box duration-300">
                 <FileText size={20} className="mr-2" /> Resume
               </a>
               <Link to="contact" smooth={true} duration={500} className="px-6 py-3 border border-neon-blue text-neon-blue font-semibold rounded-full flex items-center hover:bg-neon-blue/10 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
