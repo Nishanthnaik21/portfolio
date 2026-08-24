@@ -40,8 +40,8 @@ function App() {
         <Experience />
         <Contact />
       </main>
-      <footer className="bg-dark-900 border-t border-gray-800 py-8 text-center text-gray-500">
-        <p>© {new Date().getFullYear()} Nishanth Uday Naik.</p>
+      <footer className="bg-dark-900 border-t border-gray-800/80 py-6 sm:py-8 px-4 text-center text-xs sm:text-sm text-gray-500">
+        <p>© {new Date().getFullYear()} Nishanth Uday Naik. All rights reserved.</p>
       </footer>
     </div>
   );

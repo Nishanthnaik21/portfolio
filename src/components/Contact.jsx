@@ -39,84 +39,97 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative">
+    <section id="contact" className="py-14 sm:py-16 md:py-20 relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-3 sm:mb-4">
             Get in <span className="text-neon-blue">Touch</span>
           </h2>
-          <div className="w-24 h-1 bg-neon-blue mx-auto rounded-full"></div>
+          <div className="w-20 sm:w-24 h-1 bg-neon-blue mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="bg-dark-800/40 backdrop-blur-sm p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-gray-800"
           >
-            <h3 className="text-2xl font-display font-semibold text-white mb-6">Let's Connect</h3>
-            <p className="text-gray-400 mb-8 max-w-md">
+            <h3 className="text-xl sm:text-2xl font-display font-semibold text-white mb-3 sm:mb-4">Let's Connect</h3>
+            <p className="text-sm sm:text-base text-gray-400 mb-6 sm:mb-8 max-w-md leading-relaxed">
               I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Feel free to reach out!
             </p>
 
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-dark-800 rounded-full flex items-center justify-center text-neon-blue mr-4 border border-gray-800">
-                  <Mail size={20} />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-dark-900 rounded-full flex items-center justify-center text-neon-blue mr-3 sm:mr-4 border border-gray-800 shrink-0">
+                  <Mail size={18} className="sm:size-5" />
                 </div>
-                <div>
-                  <div className="text-sm text-gray-500 font-medium">Email</div>
-                  <a href="mailto:nishanthnaik21@gmail.com" className="text-gray-300 hover:text-white transition-colors">nishanthnaik21@gmail.com</a>
+                <div className="min-w-0 flex-1">
+                  <div className="text-xs text-gray-500 font-medium uppercase tracking-wider">Email</div>
+                  <a href="mailto:nishanthnaik21@gmail.com" className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors break-all">nishanthnaik21@gmail.com</a>
                 </div>
               </div>
               
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-dark-800 rounded-full flex items-center justify-center text-neon-purple mr-4 border border-gray-800">
-                  <Phone size={20} />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-dark-900 rounded-full flex items-center justify-center text-neon-purple mr-3 sm:mr-4 border border-gray-800 shrink-0">
+                  <Phone size={18} className="sm:size-5" />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500 font-medium">Phone</div>
-                  <a href="tel:+918073593206" className="text-gray-300 hover:text-white transition-colors">+91 8073593206</a>
+                  <div className="text-xs text-gray-500 font-medium uppercase tracking-wider">Phone</div>
+                  <a href="tel:+918073593206" className="text-sm sm:text-base text-gray-300 hover:text-white transition-colors">+91 8073593206</a>
                 </div>
               </div>
 
               <div className="flex items-center">
-                <div className="w-12 h-12 bg-dark-800 rounded-full flex items-center justify-center text-neon-green mr-4 border border-gray-800">
-                  <MapPin size={20} />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-dark-900 rounded-full flex items-center justify-center text-neon-green mr-3 sm:mr-4 border border-gray-800 shrink-0">
+                  <MapPin size={18} className="sm:size-5" />
                 </div>
                 <div>
-                  <div className="text-sm text-gray-500 font-medium">Location</div>
-                  <span className="text-gray-300">India</span>
+                  <div className="text-xs text-gray-500 font-medium uppercase tracking-wider">Location</div>
+                  <span className="text-sm sm:text-base text-gray-300">India</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex space-x-4 mt-8">
-              <a href="https://github.com/Nishanthnaik21" target="_blank" rel="noreferrer" className="w-10 h-10 bg-dark-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-white hover:text-dark-900 transition-all border border-gray-800">
+            <div className="flex space-x-3 sm:space-x-4 mt-6 sm:mt-8 pt-6 border-t border-gray-800/80">
+              <a 
+                href="https://github.com/Nishanthnaik21" 
+                target="_blank" 
+                rel="noreferrer" 
+                aria-label="GitHub Profile"
+                className="w-11 h-11 sm:w-12 sm:h-12 bg-dark-900 rounded-full flex items-center justify-center text-gray-400 hover:bg-white hover:text-dark-900 transition-all border border-gray-800 shadow-md"
+              >
                 <FaGithub size={20} />
               </a>
-              <a href="https://www.linkedin.com/in/nishanth-naik21" target="_blank" rel="noreferrer" className="w-10 h-10 bg-dark-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-[#0077b5] hover:text-white transition-all border border-gray-800">
+              <a 
+                href="https://www.linkedin.com/in/nishanth-naik21" 
+                target="_blank" 
+                rel="noreferrer" 
+                aria-label="LinkedIn Profile"
+                className="w-11 h-11 sm:w-12 sm:h-12 bg-dark-900 rounded-full flex items-center justify-center text-gray-400 hover:bg-[#0077b5] hover:text-white transition-all border border-gray-800 shadow-md"
+              >
                 <FaLinkedin size={20} />
               </a>
             </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm p-8 rounded-2xl border border-gray-800">
-              <div className="mb-6">
-                <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-2">Name</label>
+            <form onSubmit={handleSubmit} className="bg-dark-800/50 backdrop-blur-sm p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-gray-800 shadow-xl">
+              <div className="mb-4 sm:mb-6">
+                <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-gray-400 mb-1.5 sm:mb-2">Your Name</label>
                 <input
                   type="text"
                   id="name"
@@ -124,12 +137,12 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full bg-dark-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue transition-colors"
+                  className="w-full bg-dark-900 border border-gray-700 rounded-xl px-4 py-3 text-base text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-colors"
                   placeholder="John Doe"
                 />
               </div>
-              <div className="mb-6">
-                <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-2">Email</label>
+              <div className="mb-4 sm:mb-6">
+                <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-gray-400 mb-1.5 sm:mb-2">Your Email</label>
                 <input
                   type="email"
                   id="email"
@@ -137,12 +150,12 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full bg-dark-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue transition-colors"
+                  className="w-full bg-dark-900 border border-gray-700 rounded-xl px-4 py-3 text-base text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-colors"
                   placeholder="john@example.com"
                 />
               </div>
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-2">Message</label>
+              <div className="mb-4 sm:mb-6">
+                <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-gray-400 mb-1.5 sm:mb-2">Message</label>
                 <textarea
                   id="message"
                   name="message"
@@ -150,7 +163,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   rows="4"
-                  className="w-full bg-dark-900 border border-gray-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-blue transition-colors resize-none"
+                  className="w-full bg-dark-900 border border-gray-700 rounded-xl px-4 py-3 text-base text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-colors resize-none"
                   placeholder="Your message here..."
                 ></textarea>
               </div>
@@ -158,7 +171,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="w-full bg-neon-blue text-dark-900 font-bold py-3 px-4 rounded-lg flex items-center justify-center hover:bg-white transition-colors disabled:opacity-70 disabled:cursor-not-allowed glow-box"
+                className="w-full bg-neon-blue text-dark-900 font-bold py-3.5 px-4 rounded-xl flex items-center justify-center hover:bg-white transition-colors disabled:opacity-70 disabled:cursor-not-allowed glow-box text-sm sm:text-base cursor-pointer"
               >
                 {status === 'sending' ? 'Sending...' : (
                   <>

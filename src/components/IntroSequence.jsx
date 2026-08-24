@@ -51,9 +51,9 @@ const IntroSequence = ({ onComplete }) => {
           <motion.button
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2, duration: 0.8 }}
+            transition={{ delay: 1.5, duration: 0.6 }}
             onClick={handleSkip}
-            className="absolute bottom-12 z-20 px-8 py-3 border border-white/20 text-white/80 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 backdrop-blur-md"
+            className="absolute bottom-6 sm:bottom-10 md:bottom-12 z-20 px-6 sm:px-8 py-2.5 sm:py-3 border border-white/30 text-white/90 rounded-full hover:bg-white/10 hover:text-white transition-all duration-300 backdrop-blur-md text-sm sm:text-base font-medium shadow-lg active:scale-95 cursor-pointer"
           >
             Skip Intro
           </motion.button>

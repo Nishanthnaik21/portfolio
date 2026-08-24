@@ -6,11 +6,11 @@ import { Link } from 'react-scroll';
 
 const Hero = () => {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+    <section id="hero" className="min-h-[calc(100vh-4rem)] flex items-center justify-center pt-20 pb-12 sm:pt-24 sm:pb-16 lg:py-0 relative overflow-hidden scroll-mt-20">
       
-      {/* Full screen photo on the right */}
+      {/* Full screen photo on the right for Desktop */}
       <div 
-        className="absolute inset-y-0 right-0 w-full lg:w-[55%] z-0 opacity-20 lg:opacity-100"
+        className="hidden lg:block absolute inset-y-0 right-0 w-[55%] z-0"
         style={{ WebkitMaskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 30%, black 100%)', maskImage: 'linear-gradient(to right, transparent 0%, rgba(0,0,0,0.8) 30%, black 100%)' }}
       >
         <img 
@@ -22,23 +22,45 @@ const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-4rem)]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[calc(100vh-6rem)]">
           
           <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col space-y-6"
+            className="flex flex-col space-y-4 sm:space-y-6"
           >
-            <h2 className="text-neon-blue font-medium text-lg tracking-wide">HELLO, WORLD! I AM</h2>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.5rem] font-display font-bold text-white leading-tight">
+            {/* Mobile Profile Avatar Badge */}
+            <div className="flex lg:hidden items-center space-x-4 mb-1">
+              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-0.5 bg-gradient-to-tr from-neon-blue via-neon-purple to-neon-green shadow-[0_0_20px_rgba(0,240,255,0.3)] shrink-0">
+                <img 
+                  src={`${import.meta.env.BASE_URL}image.JPG`} 
+                  alt="Nishanth Uday Naik" 
+                  className="w-full h-full object-cover rounded-full" 
+                  onError={(e) => { e.target.src = '/image.JPG'; e.target.onerror = null; }} 
+                />
+              </div>
+              <div>
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-neon-green/10 text-neon-green border border-neon-green/30">
+                  <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse"></span>
+                  AI / ML Engineer
+                </span>
+              </div>
+            </div>
+
+            <h2 className="text-neon-blue font-medium text-xs sm:text-sm md:text-base tracking-wider uppercase">
+              HELLO, WORLD! I AM
+            </h2>
+            
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.2rem] font-display font-bold text-white leading-[1.15] tracking-tight break-words">
               Nishanth Uday Naik
             </h1>
-            <div className="min-h-[4rem] sm:min-h-[3rem] text-2xl sm:text-3xl font-display font-semibold text-gray-300">
+            
+            <div className="min-h-[2.5rem] sm:min-h-[3rem] text-xl sm:text-2xl md:text-3xl font-display font-semibold text-gray-300">
               <span className="mr-2">I am an</span>
               <span className="text-neon-purple glow-text">
                 <Typewriter
-                  words={['AI/ML Engineer']}
+                  words={['AI/ML Engineer', 'GenAI Developer', 'Problem Solver']}
                   loop={true}
                   cursor
                   cursorStyle="_"
@@ -48,27 +70,52 @@ const Hero = () => {
                 />
               </span>
             </div>
-            <p className="text-lg text-gray-400 max-w-lg leading-relaxed drop-shadow-md">
+            
+            <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-xl leading-relaxed">
               Passionate about building intelligent, scalable AI solutions using Machine Learning, Deep Learning, Computer Vision, and Generative AI. Final-year Artificial Intelligence & Machine Learning Engineering student with a CGPA of 9.18/10, focused on developing innovative, production-ready systems that solve real-world problems through cutting-edge AI technologies.
             </p>
             
-            <div className="flex flex-wrap gap-4 pt-4">
-              <a href={`${import.meta.env.BASE_URL}Nishanth_Resume.pdf`} download="Nishanth_Resume.pdf" className="px-6 py-3 bg-neon-blue text-dark-900 font-semibold rounded-full flex items-center hover:bg-white hover:text-dark-900 hover:scale-105 active:scale-95 transition-all glow-box duration-300">
-                <FileText size={20} className="mr-2" /> Resume
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2 sm:pt-4">
+              <a 
+                href={`${import.meta.env.BASE_URL}Nishanth_Resume.pdf`} 
+                download="Nishanth_Resume.pdf" 
+                className="px-5 sm:px-6 py-3 bg-neon-blue text-dark-900 font-semibold rounded-full flex items-center justify-center hover:bg-white hover:text-dark-900 hover:scale-105 active:scale-95 transition-all glow-box duration-300 text-sm sm:text-base shadow-lg shadow-neon-blue/20"
+              >
+                <FileText size={18} className="mr-2 shrink-0" /> Resume
               </a>
-              <Link to="contact" smooth={true} duration={500} className="px-6 py-3 border border-neon-blue text-neon-blue font-semibold rounded-full flex items-center hover:bg-neon-blue/10 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer">
-                <Mail size={20} className="mr-2" /> Contact
+              <Link 
+                to="contact" 
+                smooth={true} 
+                duration={500} 
+                offset={-70}
+                className="px-5 sm:px-6 py-3 border border-neon-blue text-neon-blue font-semibold rounded-full flex items-center justify-center hover:bg-neon-blue/10 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer text-sm sm:text-base"
+              >
+                <Mail size={18} className="mr-2 shrink-0" /> Contact
               </Link>
-              <a href="https://github.com/Nishanthnaik21" target="_blank" rel="noreferrer" className="p-3 border border-gray-600 text-gray-300 rounded-full hover:border-white hover:text-white hover:scale-110 active:scale-95 transition-all duration-300">
-                <FaGithub size={24} />
-              </a>
-              <a href="https://www.linkedin.com/in/nishanth-naik21" target="_blank" rel="noreferrer" className="p-3 border border-gray-600 text-gray-300 rounded-full hover:border-neon-blue hover:text-neon-blue hover:scale-110 active:scale-95 transition-all duration-300">
-                <FaLinkedin size={24} />
-              </a>
+              <div className="flex items-center gap-3">
+                <a 
+                  href="https://github.com/Nishanthnaik21" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  aria-label="GitHub Profile"
+                  className="p-3 border border-gray-700 text-gray-300 rounded-full hover:border-white hover:text-white hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center bg-dark-900/60"
+                >
+                  <FaGithub size={20} />
+                </a>
+                <a 
+                  href="https://www.linkedin.com/in/nishanth-naik21" 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  aria-label="LinkedIn Profile"
+                  className="p-3 border border-gray-700 text-gray-300 rounded-full hover:border-neon-blue hover:text-neon-blue hover:scale-110 active:scale-95 transition-all duration-300 flex items-center justify-center bg-dark-900/60"
+                >
+                  <FaLinkedin size={20} />
+                </a>
+              </div>
             </div>
           </motion.div>
 
-          {/* Empty div for spacing on large screens since the image is absolutely positioned */}
+          {/* Empty div for spacing on large screens since desktop photo is absolutely positioned */}
           <div className="hidden lg:block"></div>
           
         </div>

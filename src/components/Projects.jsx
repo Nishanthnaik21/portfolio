@@ -48,62 +48,72 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 relative">
+    <section id="projects" className="py-14 sm:py-16 md:py-20 relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-3 sm:mb-4">
             Featured <span className="text-neon-blue">Projects</span>
           </h2>
-          <div className="w-24 h-1 bg-neon-blue mx-auto rounded-full"></div>
+          <div className="w-20 sm:w-24 h-1 bg-neon-blue mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-dark-800 border border-gray-800 rounded-2xl overflow-hidden group hover:border-neon-blue/50 transition-all hover:shadow-[0_0_30px_rgba(0,240,255,0.1)] flex flex-col"
+              className="bg-dark-800 border border-gray-800 rounded-xl sm:rounded-2xl overflow-hidden group hover:border-neon-blue/50 transition-all hover:shadow-[0_0_30px_rgba(0,240,255,0.1)] flex flex-col"
             >
-              <div className="relative h-48 overflow-hidden">
-                <div className="absolute inset-0 bg-dark-900/40 z-10 group-hover:bg-transparent transition-all"></div>
+              <div className="relative h-44 sm:h-48 md:h-52 overflow-hidden bg-dark-900">
+                <div className="absolute inset-0 bg-dark-900/30 z-10 group-hover:bg-transparent transition-all"></div>
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
                 />
               </div>
               
-              <div className="p-6 flex-1 flex flex-col">
-                <h3 className="text-xl font-bold text-white mb-3 line-clamp-2">{project.title}</h3>
+              <div className="p-4 sm:p-6 flex-1 flex flex-col">
+                <h3 className="text-lg sm:text-xl font-bold text-white mb-2 sm:mb-3 line-clamp-2 leading-snug">{project.title}</h3>
                 
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
                   {project.tech.map((t, i) => (
-                    <span key={i} className="text-xs font-medium text-neon-blue bg-neon-blue/10 px-2 py-1 rounded">
+                    <span key={i} className="text-xs font-medium text-neon-blue bg-neon-blue/10 border border-neon-blue/20 px-2.5 py-1 rounded-md">
                       {t}
                     </span>
                   ))}
                 </div>
                 
-                <p className="text-sm text-gray-400 mb-2 flex-1">
+                <p className="text-xs sm:text-sm text-gray-400 mb-2 leading-relaxed">
                   <span className="font-semibold text-gray-300">Features:</span> {project.features.join(', ')}
                 </p>
-                <p className="text-sm text-gray-400 mb-6 flex-1">
+                <p className="text-xs sm:text-sm text-gray-400 mb-4 sm:mb-6 leading-relaxed flex-1">
                   <span className="font-semibold text-gray-300">Challenges:</span> {project.challenges}
                 </p>
                 
-                <div className="flex justify-end mt-4 pt-4 border-t border-gray-800">
+                <div className="flex items-center justify-between mt-auto pt-3 sm:pt-4 border-t border-gray-800/80">
+                  <span className="text-xs text-gray-500 font-medium">Open Source</span>
                   {project.github !== "#" && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition-colors" title="View Source Code">
-                      <FaGithub size={24} />
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="p-2 text-gray-400 hover:text-white hover:bg-dark-700/50 rounded-lg transition-colors flex items-center gap-1.5 text-xs sm:text-sm font-medium" 
+                      title="View Source Code"
+                      aria-label={`View source code for ${project.title}`}
+                    >
+                      <FaGithub size={20} />
+                      <span className="inline">Code</span>
                     </a>
                   )}
                 </div>
