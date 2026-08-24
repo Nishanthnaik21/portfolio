@@ -16,7 +16,7 @@ const Hero = () => {
         <img 
           src={`${import.meta.env.BASE_URL}image.JPG`} 
           alt="Nishanth Uday Naik" 
-          className="w-full h-full object-cover" 
+          className="w-full h-full object-cover object-[center_20%]" 
           onError={(e) => { e.target.src = '/image.JPG'; e.target.onerror = null; }} 
         />
       </div>
@@ -28,27 +28,37 @@ const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="flex flex-col space-y-4 sm:space-y-6"
+            className="flex flex-col items-center text-center lg:items-start lg:text-left space-y-4 sm:space-y-6"
           >
-            {/* Mobile Profile Avatar Badge */}
-            <div className="flex lg:hidden items-center space-x-4 mb-1">
-              <div className="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full p-0.5 bg-gradient-to-tr from-neon-blue via-neon-purple to-neon-green shadow-[0_0_20px_rgba(0,240,255,0.3)] shrink-0">
-                <img 
-                  src={`${import.meta.env.BASE_URL}image.JPG`} 
-                  alt="Nishanth Uday Naik" 
-                  className="w-full h-full object-cover rounded-full" 
-                  onError={(e) => { e.target.src = '/image.JPG'; e.target.onerror = null; }} 
-                />
+            {/* Mobile & Tablet Prominent Profile Avatar Badge */}
+            <div className="flex lg:hidden flex-col items-center mb-2">
+              <div className="relative group">
+                {/* Ambient Glow */}
+                <div className="absolute -inset-1.5 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-green rounded-full blur-lg opacity-70 group-hover:opacity-100 transition duration-500 animate-pulse-slow"></div>
+                
+                {/* Glowing Avatar Ring */}
+                <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full p-1 bg-gradient-to-tr from-neon-blue via-neon-purple to-neon-green shadow-[0_0_30px_rgba(0,240,255,0.4)]">
+                  <div className="w-full h-full rounded-full overflow-hidden bg-dark-900">
+                    <img 
+                      src={`${import.meta.env.BASE_URL}image.JPG`} 
+                      alt="Nishanth Uday Naik" 
+                      className="w-full h-full object-cover object-[center_16%]" 
+                      onError={(e) => { e.target.src = '/image.JPG'; e.target.onerror = null; }} 
+                    />
+                  </div>
+                </div>
               </div>
-              <div>
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-neon-green/10 text-neon-green border border-neon-green/30">
+
+              {/* Status Badge */}
+              <div className="mt-3.5 sm:mt-4">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium bg-dark-800/80 text-neon-green border border-neon-green/30 backdrop-blur-md shadow-md">
                   <span className="w-2 h-2 rounded-full bg-neon-green animate-pulse"></span>
                   AI / ML Engineer
                 </span>
               </div>
             </div>
 
-            <h2 className="text-neon-blue font-medium text-xs sm:text-sm md:text-base tracking-wider uppercase">
+            <h2 className="text-neon-blue font-semibold text-xs sm:text-sm md:text-base tracking-widest uppercase">
               HELLO, WORLD! I AM
             </h2>
             
@@ -56,7 +66,7 @@ const Hero = () => {
               Nishanth Uday Naik
             </h1>
             
-            <div className="min-h-[2.5rem] sm:min-h-[3rem] text-xl sm:text-2xl md:text-3xl font-display font-semibold text-gray-300">
+            <div className="min-h-[2.5rem] sm:min-h-[3rem] text-xl sm:text-2xl md:text-3xl font-display font-semibold text-gray-300 flex items-center justify-center lg:justify-start">
               <span className="mr-2">I am an</span>
               <span className="text-neon-purple glow-text">
                 <Typewriter
@@ -75,7 +85,7 @@ const Hero = () => {
               Passionate about building intelligent, scalable AI solutions using Machine Learning, Deep Learning, Computer Vision, and Generative AI. Final-year Artificial Intelligence & Machine Learning Engineering student with a CGPA of 9.18/10, focused on developing innovative, production-ready systems that solve real-world problems through cutting-edge AI technologies.
             </p>
             
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2 sm:pt-4">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2 sm:pt-4">
               <a 
                 href={`${import.meta.env.BASE_URL}Nishanth_Resume.pdf`} 
                 download="Nishanth_Resume.pdf" 
