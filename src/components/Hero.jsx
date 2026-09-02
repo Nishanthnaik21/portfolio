@@ -33,7 +33,7 @@ const Hero = () => {
       </div>
 
       {/* Mobile & Tablet Full Background Photo */}
-      <div className="block lg:hidden absolute inset-0 z-0 overflow-hidden pointer-events-none select-none">
+      <div className="block lg:hidden absolute top-0 inset-x-0 h-[48vh] sm:h-[54vh] z-0 overflow-hidden pointer-events-none select-none">
         <picture>
           <source srcSet={`${import.meta.env.BASE_URL}image.webp`} type="image/webp" />
           <img 
@@ -44,16 +44,16 @@ const Hero = () => {
             decoding="async"
             width="1920"
             height="1280"
-            className="w-full h-full object-cover object-[46%_12%] opacity-80" 
+            className="w-full h-full object-cover object-[48%_18%] filter brightness-105" 
           />
         </picture>
-        {/* Gentle gradient overlay keeping face clear while providing contrast for text */}
-        <div className="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/65 to-dark-900/25" />
-        <div className="absolute inset-0 bg-gradient-to-b from-dark-900/40 via-transparent to-dark-900/80" />
+        {/* Soft bottom blend to dark background */}
+        <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-dark-900 via-dark-900/80 to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-dark-900/70 to-transparent" />
       </div>
 
       <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-24 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[calc(100vh-6rem)]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[calc(100vh-6rem)] pt-[30vh] sm:pt-[36vh] lg:pt-0">
           
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
