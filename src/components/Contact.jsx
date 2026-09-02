@@ -39,8 +39,8 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-14 sm:py-16 md:py-20 relative scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-14 sm:py-16 md:py-24 relative scroll-mt-20">
+      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-24">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -138,7 +138,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full bg-dark-900 border border-gray-700 rounded-xl px-4 py-3 text-base text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-colors"
-                  placeholder="John Doe"
+                  placeholder="Enter your name"
                 />
               </div>
               <div className="mb-4 sm:mb-6">
@@ -151,7 +151,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full bg-dark-900 border border-gray-700 rounded-xl px-4 py-3 text-base text-white focus:outline-none focus:border-neon-blue focus:ring-1 focus:ring-neon-blue transition-colors"
-                  placeholder="john@example.com"
+                  placeholder="Enter your email"
                 />
               </div>
               <div className="mb-4 sm:mb-6">

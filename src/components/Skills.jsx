@@ -25,8 +25,8 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-14 sm:py-16 md:py-20 relative bg-dark-800/30 scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-14 sm:py-16 md:py-24 relative bg-dark-800/30 scroll-mt-20">
+      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-24">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,7 +40,7 @@ const Skills = () => {
           <div className="w-20 sm:w-24 h-1 bg-neon-purple mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 sm:gap-8">
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}

@@ -4,10 +4,37 @@ import { Briefcase, GraduationCap } from 'lucide-react';
 const Experience = () => {
   const experiences = [
     {
+      role: "AI Automation & Intelligent Solutions Intern",
+      company: "IBM SkillsBuild & BharatCares (in association with AICTE)",
+      type: "Internship",
+      duration: "June 2026 – July 2026",
+      icon: <Briefcase className="text-neon-blue" size={20} />,
+      badgeColor: "text-neon-blue bg-neon-blue/10 border-neon-blue/20",
+      details: [
+        "Completed 6-week technical internship focused on AI Automation and Intelligent Solutions.",
+        "Built automated workflows and developed practical AI system solutions leveraging IBM SkillsBuild technologies.",
+        "Conducted in association with the All India Council for Technical Education (AICTE) and BharatCares."
+      ]
+    },
+    {
+      role: "Freelance Software Developer",
+      company: "Gym Management System — Client Project",
+      type: "Freelance",
+      duration: "Ongoing",
+      icon: <Briefcase className="text-neon-green" size={20} />,
+      badgeColor: "text-neon-green bg-neon-green/10 border-neon-green/20",
+      details: [
+        "Developing a desktop-based system to automate member registration, attendance tracking, and payments.",
+        "Integrated MySQL via JDBC and designed an admin dashboard with automated report generation."
+      ]
+    },
+    {
       role: "Planning & Strategy Lead",
       company: "Nucleus Club",
       type: "Leadership",
+      duration: "Active",
       icon: <Briefcase className="text-neon-purple" size={20} />,
+      badgeColor: "text-neon-purple bg-neon-purple/10 border-neon-purple/20",
       details: [
         "Strategic Planning & Operations",
         "Team Coordination & Leadership",
@@ -37,8 +64,8 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-14 sm:py-16 md:py-20 relative bg-dark-800/30 scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-14 sm:py-16 md:py-24 relative bg-dark-800/30 scroll-mt-20">
+      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-24">
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Experience Section */}
@@ -55,16 +82,20 @@ const Experience = () => {
             <div className="space-y-6 sm:space-y-8 relative before:absolute before:top-3 before:bottom-3 before:left-5 before:-translate-x-1/2 before:w-0.5 before:bg-gradient-to-b before:from-neon-purple before:via-gray-700 before:to-transparent">
               {experiences.map((exp, index) => (
                 <div key={index} className="relative flex items-start group">
-                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 bg-dark-900 text-neon-purple shadow shrink-0 z-10 group-hover:border-neon-purple transition-colors">
+                  <div className="flex items-center justify-center w-10 h-10 rounded-full border border-gray-700 bg-dark-900 shadow shrink-0 z-10 group-hover:border-neon-purple transition-colors">
                     {exp.icon}
                   </div>
                   
                   <div className="flex-1 ml-4 sm:ml-6 bg-dark-900 p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-gray-800 group-hover:border-neon-purple/50 transition-colors shadow-lg">
                     <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-1 sm:gap-2 mb-2">
                       <h3 className="font-bold text-white text-lg sm:text-xl leading-snug">{exp.role}</h3>
-                      <span className="text-neon-purple text-xs sm:text-sm font-medium bg-neon-purple/10 border border-neon-purple/20 px-2.5 py-0.5 rounded-full shrink-0">{exp.type}</span>
+                      <div className="flex items-center gap-2 shrink-0">
+                        {exp.duration && <span className="text-xs text-gray-500 font-medium hidden sm:inline">{exp.duration}</span>}
+                        <span className={`text-xs sm:text-sm font-medium border px-2.5 py-0.5 rounded-full ${exp.badgeColor || 'text-neon-purple bg-neon-purple/10 border-neon-purple/20'}`}>{exp.type}</span>
+                      </div>
                     </div>
-                    <div className="text-gray-400 font-medium text-sm sm:text-base mb-3">{exp.company}</div>
+                    <div className="text-gray-400 font-medium text-sm sm:text-base mb-1">{exp.company}</div>
+                    {exp.duration && <div className="text-xs text-gray-500 font-medium mb-3 sm:hidden">{exp.duration}</div>}
                     <ul className="text-gray-400 text-xs sm:text-sm space-y-1.5 list-disc list-inside">
                       {exp.details.map((detail, i) => (
                         <li key={i}>{detail}</li>

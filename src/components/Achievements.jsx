@@ -3,15 +3,15 @@ import { Trophy, Award } from 'lucide-react';
 
 const Achievements = () => {
   const achievements = [
+    "IBM SkillsBuild & AICTE – AI Automation & Intelligent Solutions Certified",
     "Winner – Digital Image Processing Competition",
     "Runner-Up – AI/ML Project Competition",
-    "Deloitte Data Analytics & Forensic Technology Simulation",
-    "Google Developer Group Workshop Participant"
+    "Deloitte Data Analytics & Forensic Technology Simulation"
   ];
 
   return (
-    <section id="achievements" className="py-14 sm:py-16 md:py-20 relative scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="achievements" className="py-14 sm:py-16 md:py-24 relative scroll-mt-20">
+      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-24">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +25,7 @@ const Achievements = () => {
           <div className="w-20 sm:w-24 h-1 bg-neon-blue mx-auto rounded-full"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-6 max-w-7xl mx-auto">
           {achievements.map((item, index) => (
             <motion.div
               key={index}

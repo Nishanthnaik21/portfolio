@@ -26,11 +26,11 @@ function App() {
   }, [showIntro]);
 
   return (
-    <div className="relative w-full">
+    <div className="relative w-full min-h-screen bg-dark-900 text-white">
       {showIntro && <IntroSequence onComplete={() => setShowIntro(false)} />}
       
-      <AnimatedBackground />
-      <Navbar />
+      {!showIntro && <AnimatedBackground />}
+      <Navbar onReplayIntro={() => setShowIntro(true)} />
       <main>
         <Hero />
         <About />
@@ -41,7 +41,18 @@ function App() {
         <Contact />
       </main>
       <footer className="bg-dark-900 border-t border-gray-800/80 py-6 sm:py-8 px-4 text-center text-xs sm:text-sm text-gray-500">
-        <p>© {new Date().getFullYear()} Nishanth Uday Naik. All rights reserved.</p>
+        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-24 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p>© {new Date().getFullYear()} Nishanth Uday Naik. All rights reserved.</p>
+          <button
+            onClick={() => {
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+              setShowIntro(true);
+            }}
+            className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-neon-blue transition-colors px-3 py-1.5 rounded-full border border-gray-800 hover:border-neon-blue/40 bg-dark-800/60 cursor-pointer"
+          >
+            <span>Replay Intro</span>
+          </button>
+        </div>
       </footer>
     </div>
   );

@@ -26,8 +26,8 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-14 sm:py-16 md:py-20 relative scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-14 sm:py-16 md:py-24 relative scroll-mt-20">
+      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 xl:px-20 2xl:px-24">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -47,6 +47,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
+            className="w-full max-w-3xl mx-auto lg:max-w-none"
           >
             <h3 className="text-xl sm:text-2xl font-display font-semibold text-white mb-4 sm:mb-6">
               My Journey into AI
@@ -67,7 +68,7 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6"
+            className="hidden md:grid sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6"
           >
             {highlights.map((item, index) => (
               <div 
